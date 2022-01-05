@@ -35,6 +35,9 @@ export default class ReCAPTCHA extends React.Component {
       executer = grecaptcha.enterprise.execute;
     }
     if (executer && this._widgetId !== undefined) {
+      if (this.props.action) {
+        return executer(this._widgetId, { action: this.props.action });
+      }
       return executer(this._widgetId);
     } else {
       this._executeRequested = true;
@@ -179,6 +182,7 @@ ReCAPTCHA.propTypes = {
   hl: PropTypes.string,
   badge: PropTypes.oneOf(["bottomright", "bottomleft", "inline"]),
   isolated: PropTypes.bool,
+  action: PropTypes.string,
 };
 ReCAPTCHA.defaultProps = {
   onChange: () => {},
