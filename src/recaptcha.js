@@ -122,7 +122,6 @@ export default class ReCAPTCHA extends React.Component {
         hl: this.props.hl,
         badge: this.props.badge,
         isolated: this.props.isolated,
-        action: this.props.action,
       });
       this.captcha.appendChild(wrapper);
     }
