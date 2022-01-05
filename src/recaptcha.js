@@ -160,6 +160,7 @@ export default class ReCAPTCHA extends React.Component {
       badge,
       hl,
       isolated,
+      action,
       ...childProps
     } = this.props;
     /* eslint-enable no-unused-vars */
